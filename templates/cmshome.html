@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+    <title>CMS Home</title>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/cmshome/">CMS Admin Tool</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/logout/">Logout</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+
+
+      <div class="row">
+        <div class="col=lg col-md-12 mb-4">
+          <div class="card bg-light mb-3 mt-3 ml-3" id="toolbarcard" style="max-width: 20rem;">
+            <div class="card-header">Toolbar</div>
+              <div class="card-body">
+                <button class="far fa-plus-square" id="addpagebutton"> Add Page</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col=lg col-md-12 mb-4" id="work-area">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+          <script>
+            $(document).ready(function(){
+              $('#addpagebutton').click(function(){
+                $('#work-area').prepend('<input class="form-control form-control-lg" type="text" placeholder="Page Name">');
+              });
+            });
+          </script>
+
+      </div>
+
+    </body>
+</html>

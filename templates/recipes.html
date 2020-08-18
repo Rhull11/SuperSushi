@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Super Sushi - Recipes{% endblock%}
+
+{% block recipecards %}
+
+<div class="container mb-5 mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="card mb-3" style="width: 18rem;">
+      <img class="card-img-top" src="{{url_for('static', filename='tools.jpg')}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">What you need</h5>
+        <p class="card-text">Items and tools required to make sushi.</p>
+        <a href="whatyouneed" class="btn btn-primary stretched-link">Go</a>
+      </div>
+    </div>
+    </div>
+
+    <div class="col">
+      <div class="card mb-3" style="width: 18rem;">
+        <img class="card-img-top" src="{{url_for('static', filename='california_roll.jpg')}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Preparing the Rice</h5>
+          <p class="card-text">Guide on how to prepare sushi(short grain, white) rice.</p>
+          <a href="sushirice" class="btn btn-primary stretched-link">Go</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="col">
+    <div class="card mb-3" style="width: 18rem;">
+      <img class="card-img-top" src="{{url_for('static', filename='california_roll.jpg')}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">California Roll</h5>
+        <p class="card-text">How to make and prepare California Rolls.</p>
+        <a href="californiaroll" class="btn btn-primary stretched-link">Go</a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+</div>
+{% endblock %}
