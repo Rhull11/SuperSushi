@@ -12,35 +12,46 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="/logout/">Logout</a>
+        <a class="navbar-brand ml-auto" href="/logout/">Logout</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </nav>
 
-
-      <div class="row">
-        <div class="col=lg col-md-12 mb-4">
-          <div class="card bg-light mb-3 mt-3 ml-3" id="toolbarcard" style="max-width: 20rem;">
-            <div class="card-header">Toolbar</div>
-              <div class="card-body">
-                <button class="far fa-plus-square" id="addpagebutton"> Add Page</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col=lg col-md-12 mb-4" id="work-area">
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-
-          <script>
-            $(document).ready(function(){
-              $('#addpagebutton').click(function(){
-                $('#work-area').prepend('<input class="form-control form-control-lg" type="text" placeholder="Page Name">');
-              });
-            });
-          </script>
-
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-cyan" id="addpagebtn">Add New Page</button>
+        <button type="button" class="btn btn-cyan">Place holder</button>
+        <button type="button" class="btn btn-cyan">Place holder</button>
       </div>
 
+      <div class="col=lg col-md-12 mb-4" id="work-area"></div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+      <script>
+        $(document).ready(function(){
+
+          var textBox = $('<input class="form-control form-control-lg" type="text" placeholder="Page Name">');
+          var createBtn = $('<button class="btn btn-primary">Create</button>');
+          var cancelBtn = $('<button class="btn btn-danger">Cancel</button>');
+          var addpageBtn = $('#addpagebtn');
+          var workArea = $('#work-area');
+
+          workArea.append(textBox);
+          textBox.after(createBtn);
+          createBtn.after(cancelBtn);
+
+          workArea.children().hide();
+
+          addpageBtn.click(function(){
+            addpageBtn.attr('disabled', true);
+            workArea.children().show();
+            });
+
+          cancelBtn.on("click", function(){
+            addpageBtn.attr('disabled', false);
+            workArea.children().hide();
+          });
+        });
+      </script>
     </body>
 </html>
